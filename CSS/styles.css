@@ -1,0 +1,107 @@
+
+h1 {
+    text-align: center;
+    font-size: 55px;
+}
+
+p {
+    text-align: center;
+    font-size: 25px;
+}
+
+#container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+
+    
+
+}
+
+#play-area {
+    margin: auto; 
+    height: 80vh;
+    width: 99.5%;
+    border: 4px solid rgba(0, 255, 0, 0.749);
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+
+    /* position: relative; */
+    
+    
+
+    
+    
+    
+    /* properties for using flexbox below
+
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+    align-items: flex-end; */
+
+}
+
+.controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: 25px;
+    padding: 15px;
+}
+
+.buttons {
+    border: 4px solid grey;
+    padding: 15px;
+    font-style: italic;
+    text-shadow: 1px -2px lime;
+}
+
+.game-elements {
+    border: 4px solid black;
+    width: 8vmin;
+    height: 8vmin;
+}
+
+#Character {
+    background-color: yellow;
+    border-color: goldenrod;
+    position: absolute;
+    left: 25%;
+    bottom: 8px;
+    /* z-index: 1; */
+}
+
+#Platform {
+    width: 200px;
+    background-color: aqua;
+    border-color: rgb(0, 199, 196);
+    position: absolute;
+    left: 57%;
+    top: 75%;
+    z-index: 0;
+    
+}
+
+#Obstacle {
+    background-color: red;
+    border-color: grey;
+    position: absolute;
+    left: 15px;
+    bottom: 8px;
+    z-index: 0;
+    
+}
+
+#groundlevel {
+    background-color: black;
+    /* position: absolute; */
+    height: 8vmin;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+
+}
