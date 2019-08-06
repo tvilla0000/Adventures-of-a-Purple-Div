@@ -8,9 +8,9 @@
 /*----- app's state (variables) -----*/
 let speed;
 
-let x = 0;
+let posx = 0;
 
-let y = 0;
+let posy = 0;
 
 
 
@@ -32,34 +32,31 @@ let platform = document.getElementById('Platform');
 
 /*----- event listeners -----*/ 
 
-document.getElementById('Character').addEventListener('keydown', movChar);
+document.getElementById('Character').addEventListener('keydown', movCharDown);
 
-document.getElementById('Character').addEventListener('keyup', movChar);
+document.getElementById('Character').addEventListener('keyup', function() {movCharDown});
 
 /*----- functions -----*/
 
-// function movChar(evt) {
 
-//     $(document).keydown(function(e) {
-        
-//         if (e.keyCode === KEY_LEFT) {
-//             x += -15 + 'px';
-//         }
-//         else if (e.keyCode === KEY_RIGHT) {
-//             x += 15 + 'px';
-//         }
-//         else if (e.keyCode === KEY_UP ) {
-//             y += 15 + 'px';
-//         }
 
-//     })
 
-// console.log(x);
-// console.log(y);
 
-// };
 
-// movChar();
 
+
+
+function movCharDown() {
+    // if (KEY_UP) {
+    let move = parseInt(document.getElementById('Character').style.top.replace('px', ''));
+    document.getElementById('Character').style.top = `${(move || 0) + 15}px`;
+    // }
+};
+
+// function movChar() {
+//     if (KEY_UP)
+// }
+
+// movCharDown();
 
 

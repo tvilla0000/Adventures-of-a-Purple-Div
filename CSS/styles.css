@@ -23,9 +23,10 @@ p {
     height: 80vh;
     width: 99.5%;
     border: 4px solid rgba(0, 255, 0, 0.749);
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* align-items: flex-end; */
+    position:relative;
 
     /* position: relative; */
     
@@ -69,8 +70,12 @@ p {
     background-color: yellow;
     border-color: goldenrod;
     position: absolute;
-    left: 25%;
-    bottom: 8px;
+    top: 0px;
+    /* left: 
+    top: */
+
+    /* left: 25%;
+    bottom: 8px; */
     /* z-index: 1; */
 }
 
@@ -97,11 +102,9 @@ p {
 
 #groundlevel {
     background-color: black;
-    /* position: absolute; */
+    position: absolute;
     height: 8vmin;
     width: 100%;
     bottom: 0;
-    left: 0;
-    z-index: 0;
-
+    
 }

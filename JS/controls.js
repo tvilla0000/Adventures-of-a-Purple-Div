@@ -8,6 +8,8 @@ let KEY_UP = 38;
 
 let keyState = [false, false, false]
 
+
+
 /* ------------ EVENT LISTENERS ---------*/
 
 
@@ -32,7 +34,8 @@ function initKeyboard() {
         }
         if (e.keyCode === KEY_UP) {
             keyState[2] = true;
-        
+            let move = parseInt(document.getElementById('Character').style.bottom.replace('px', ''));
+    document.getElementById('Character').style.bottom = `${(move) + 15}px`;
         }
         console.log(keyState);
         
