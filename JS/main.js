@@ -30,9 +30,5 @@
 
 /*----- functions -----*/
 
-function init() {
-
-}
-
 
 
