@@ -70,10 +70,8 @@ p {
     background-color: yellow;
     border-color: goldenrod;
     position: absolute;
-    top: 0px;
-    /* left: 
-    top: */
-
+    bottom: 8vmin;
+    left: 0px;
     /* left: 25%;
     bottom: 8px; */
     /* z-index: 1; */
