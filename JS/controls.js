@@ -20,17 +20,22 @@ let keyState = [false, false, false]
 
 function initKeyboard() {
     $(document).keydown(function(e) {
+
         if (e.keyCode === KEY_LEFT) {
             keyState[0] = true;
-            
+        
+
         }
         if (e.keyCode === KEY_RIGHT) {
             keyState[1] = true;
+        
         }
         if (e.keyCode === KEY_UP) {
             keyState[2] = true;
+        
         }
         console.log(keyState);
+        
     });
 
     $(document).keyup(function(e) {
