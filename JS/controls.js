@@ -6,7 +6,9 @@ let KEY_RIGHT = 39;
 
 let KEY_UP = 38;
 
-let keyState = [false, false, false]
+let KEY_DOWN = 40;
+
+let keyState = [false, false, false, false];
 
 let x = 1;
 
@@ -14,6 +16,7 @@ let x = 1;
 
 let y = 2;
 
+let jump;
 
 
 
@@ -33,6 +36,8 @@ let platform = document.getElementById('Platform');
 /* ------------ EVENT LISTENERS ---------*/
 
 document.getElementById('Character').addEventListener('onkeydown', initKeyboard);
+document.getElementById('Character').addEventListener('onkeydown', charJump);
+
 
 // document.getElementById('Character').addEventListener('onkeyup', movCharUp);
 
@@ -41,6 +46,19 @@ document.getElementById('Character').addEventListener('onkeydown', initKeyboard)
 
 
 /* ------------ FUNCTIONS ---------------*/
+
+
+
+function charJump() {
+    document.onkeydown = function() {
+        if (KEY_UP === true) {
+            jump = setInterval(function() {
+                document.getElementById('Character').style.bottom = y*25+'px'; y++; 250
+            });
+        }
+
+    }
+}
 
 function initKeyboard() {
     document.onkeydown = function(e) {
@@ -63,13 +81,12 @@ e.preventDefault();
         });
         }
         if (e.keyCode === KEY_UP) {
-            keyState[2] = true;
-            setTimeout(function() {
-                document.getElementById('Character').style.bottom = y*20 + 'vh';
-                ++y;
-                
-                
-            });
+            keyState[2] = true; 
+            // jump = setInterval(charJump, 250);
+            }
+
+        if (e.keyCode === KEY_DOWN) {
+            keyState[3] = true;
         }
         console.log(keyState);
         
@@ -86,19 +103,17 @@ e.preventDefault();
         }
         if (e.keyCode === KEY_UP) {
             keyState[2] = false;
+            // clearInterval(jump);
+        }
+        if (e.keyCode === KEY_DOWN) {
+            keyState[3] = false;
         }
         console.log(keyState);
     };
 }
 
-
-// function movCharUp() {
-    
-//     // let move = parseInt(document.getElementById('Character').style.bottom.replace('px', ''));
-//     document.getElementById('Character').innerHTML.bottom = x+20+'px';  
-    
-// };
-
-
-
 initKeyboard();
+
+// obstacle SetInterval(function(){
+// for(i =0; i < maxDistance; i++){    
+// style.left += 5(///position)

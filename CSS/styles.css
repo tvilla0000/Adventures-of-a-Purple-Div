@@ -9,40 +9,25 @@ p {
     font-size: 25px;
 }
 
+body {
+    background: radial-gradient(lime, black);
+}
+
 #container {
     height: 100vh;
     width: 100%;
     display: flex;
-
-    
-
 }
 
 #play-area {
     margin: auto; 
-    height: 80vh;
-    width: 99.5%;
+    height: 100vh;
+    width: 90vw;
     border: 4px solid rgba(0, 255, 0, 0.749);
-    /* display: flex; */
-    /* flex-direction: row; */
-    /* align-items: flex-end; */
+    background-repeat: no-repeat;
+    background: url(/Users/bigboiii/Project1/images/2d_platform_landscape.jpg);
+    background-size: 100%, 100%;
     position:relative;
-
-    /* position: relative; */
-    
-    
-
-    
-    
-    
-    /* properties for using flexbox below
-
-    /* display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-content: center;
-    align-items: flex-end; */
-
 }
 
 .controls {
@@ -54,23 +39,24 @@ p {
 }
 
 .buttons {
-    border: 4px solid grey;
+    border: 4px solid black;
     padding: 15px;
     font-style: italic;
-    text-shadow: 1px -2px lime;
+    text-shadow: 1px -4px black;
+    color: lime;
 }
 
 .game-elements {
     border: 4px solid black;
-    width: 8vmin;
-    height: 8vmin;
+    width: 50px;
+    height: 50px;
 }
 
 #Character {
     background-color: yellow;
     border-color: goldenrod;
     position: absolute;
-    bottom: 20px;
+    bottom: 45px;
     left: 0px; 
     z-index: 1;
     
@@ -101,7 +87,7 @@ p {
 #groundlevel {
     background-color: black;
     position: absolute;
-    height: 20px;
+    height: 45px;
     width: 100%;
     bottom: 0;
     
@@ -110,7 +96,7 @@ p {
 #Endgame {
     background-color: lime;
     position: absolute;
-    right: 0px;
-    bottom: 20px;
+    right: 50%;
+    bottom: 45px;
     z-index: 0;
 }
