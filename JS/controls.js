@@ -8,9 +8,11 @@ let KEY_UP = 38;
 
 let keyState = [false, false, false]
 
-let x = 0;
+let x = 2;
 
-let y = 0;
+let y = 2;
+
+
 
 
 
@@ -28,9 +30,9 @@ let platform = document.getElementById('Platform');
 
 /* ------------ EVENT LISTENERS ---------*/
 
-document.getElementById('Character').addEventListener('keydown', movCharUp);
+document.getElementById('Character').addEventListener('onkeydown', initKeyboard);
 
-document.getElementById('Character').addEventListener('keyup', movCharUp);
+// document.getElementById('Character').addEventListener('onkeyup', movCharUp);
 
 
 
@@ -39,52 +41,60 @@ document.getElementById('Character').addEventListener('keyup', movCharUp);
 /* ------------ FUNCTIONS ---------------*/
 
 function initKeyboard() {
-    $(document).keydown(function(e) {
-
+    document.onkeydown = function(e) {
+e.preventDefault();
         if (e.keyCode === KEY_LEFT) {
             keyState[0] = true;
-            
-
+            setTimeout(function() {
+                document.getElementById('Character').style.right = -x*-10 + 'px';
+                --x;
+                console.log(x);
+            })
         }
         if (e.keyCode === KEY_RIGHT) {
             keyState[1] = true;
-            setInterval(function() {
-                document.getElementById("Character").style.left = x+2+"px";
-                x++;
-            });
+            setTimeout(function() {
+        document.getElementById("Character").style.left = x*10 + 'px';
+            ++x;
+            console.log(x)
+        });
         }
         if (e.keyCode === KEY_UP) {
             keyState[2] = true;
-            movCharUp();
+            setTimeout(function() {
+                document.getElementById('Character').style.bottom = y*20 + 'px';
+                ++y;
+                console.log(y);
+            });
         }
         console.log(keyState);
         
-    });
+    };
 
-    $(document).keyup(function(e) {
+    document.onkeyup = function(e) {
         if (e.keyCode === KEY_LEFT) {
             keyState[0] = false;
         }
         if (e.keyCode === KEY_RIGHT) {
             keyState[1] = false;
-            setInterval(function() {
-                document.getElementById("Character").style.left = x-2+"px";
-                x;
-            });
+            // document.getElementById('Character').style.left = x*0+'px'; x = 0;
+            
         }
         if (e.keyCode === KEY_UP) {
             keyState[2] = false;
         }
         console.log(keyState);
-    });
+    };
 }
 
-function movCharUp() {
+
+// function movCharUp() {
     
-    let move = parseInt(document.getElementById('Character').style.bottom.replace('px', ''));
-    document.getElementById('Character').style.bottom = `${(move || 0) + 15}px`;
+//     // let move = parseInt(document.getElementById('Character').style.bottom.replace('px', ''));
+//     document.getElementById('Character').innerHTML.bottom = x+20+'px';  
     
-};
+// };
 
 
-initKeyboard()
+
+initKeyboard();

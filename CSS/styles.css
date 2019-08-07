@@ -70,11 +70,10 @@ p {
     background-color: yellow;
     border-color: goldenrod;
     position: absolute;
-    bottom: 8vmin;
-    left: 0px;
-    /* left: 25%;
-    bottom: 8px; */
-    /* z-index: 1; */
+    bottom: 20px;
+    left: 0px;  
+    
+    
 }
 
 #Platform {
@@ -101,7 +100,7 @@ p {
 #groundlevel {
     background-color: black;
     position: absolute;
-    height: 8vmin;
+    height: 20px;
     width: 100%;
     bottom: 0;
     
