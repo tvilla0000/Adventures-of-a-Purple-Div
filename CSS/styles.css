@@ -71,7 +71,8 @@ p {
     border-color: goldenrod;
     position: absolute;
     bottom: 20px;
-    left: 0px;  
+    left: 0px; 
+    z-index: 1;
     
     
 }
@@ -104,4 +105,12 @@ p {
     width: 100%;
     bottom: 0;
     
+}
+
+#Endgame {
+    background-color: lime;
+    position: absolute;
+    right: 0px;
+    bottom: 20px;
+    z-index: 0;
 }

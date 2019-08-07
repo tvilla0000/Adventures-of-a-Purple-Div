@@ -8,7 +8,9 @@ let KEY_UP = 38;
 
 let keyState = [false, false, false]
 
-let x = 2;
+let x = 1;
+
+// let -x;
 
 let y = 2;
 
@@ -46,25 +48,27 @@ e.preventDefault();
         if (e.keyCode === KEY_LEFT) {
             keyState[0] = true;
             setTimeout(function() {
-                document.getElementById('Character').style.right = -x*-10 + 'px';
-                --x;
+                document.getElementById('Character').style.left = x*15 + 'px';
+                x--;
+                
                 console.log(x);
             })
         }
         if (e.keyCode === KEY_RIGHT) {
             keyState[1] = true;
             setTimeout(function() {
-        document.getElementById("Character").style.left = x*10 + 'px';
-            ++x;
-            console.log(x)
+        document.getElementById('Character').style.left = x*15 + 'px';
+            x++;
+            
         });
         }
         if (e.keyCode === KEY_UP) {
             keyState[2] = true;
             setTimeout(function() {
-                document.getElementById('Character').style.bottom = y*20 + 'px';
+                document.getElementById('Character').style.bottom = y*20 + 'vh';
                 ++y;
-                console.log(y);
+                
+                
             });
         }
         console.log(keyState);
