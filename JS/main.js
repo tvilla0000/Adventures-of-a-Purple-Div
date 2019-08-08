@@ -7,6 +7,9 @@
 
 /*----- app's state (variables) -----*/
 
+const rect = char.getBoundingClientRect();
+
+const rect2 = endGame.getBoundingClientRect();
 
 
 
@@ -25,25 +28,26 @@
 
 /*----- functions -----*/
 
-
-
-
-
-
-
-
-
-// function movCharUp() {
+function winningLogic() {
+    setInterval(function() {
+    if (char.getBoundingClientRect().right === endGame.getBoundingClientRect().left && 
+    char.getBoundingClientRect().bottom === endGame.getBoundingClientRect().bottom || char.getBoundingClientRect().left === endGame.getBoundingClientRect().right && char.getBoundingClientRect().bottom === endGame.getBoundingClientRect().bottom) {
+        alert('Congrats');
+        }
+    })
+};
     
-//     // let move = parseInt(document.getElementById('Character').style.top.replace('px', ''));
-//     document.getElementById('Character').style.position += 15 + 'px';
     
-// };
+    winningLogic();
 
-// function movChar() {
-//     if (KEY_UP)
-// }
-
-// movCharDown();
-
+function youLose(){
+    setInterval(function() {
+    if (char.getBoundingClientRect().right === noTouch.getBoundingClientRect().left && char.getBoundingClientRect().bottom === noTouch.getBoundingClientRect().bottom ||
+    char.getBoundingClientRect().left === noTouch.getBoundingClientRect().right && char.getBoundingClientRect().bottom === noTouch.getBoundingClientRect().bottom){
+        alert("You Died, Try again!");
+    }
+    })
+};
+    
+youLose();
 

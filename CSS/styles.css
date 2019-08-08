@@ -28,6 +28,7 @@ body {
     background: url(/Users/bigboiii/Project1/images/2d_platform_landscape.jpg);
     background-size: 100%, 100%;
     position:relative;
+    
 }
 
 .controls {
@@ -58,7 +59,7 @@ body {
     position: absolute;
     bottom: 45px;
     left: 0px; 
-    z-index: 1;
+    /* z-index: 1; */
     
     
 }
@@ -78,8 +79,8 @@ body {
     background-color: red;
     border-color: grey;
     position: absolute;
-    left: 15px;
-    bottom: 8px;
+    left: 250px;
+    bottom: 45px;
     z-index: 0;
     
 }
@@ -94,9 +95,12 @@ body {
 }
 
 #Endgame {
-    background-color: lime;
+    /* background-color: lime; */
     position: absolute;
-    right: 50%;
+    right: 75px;
     bottom: 45px;
-    z-index: 0;
+    height: 125px;
+    width: 75px;
+    border-radius: 50%;
+    /* z-index: 1; */
 }
