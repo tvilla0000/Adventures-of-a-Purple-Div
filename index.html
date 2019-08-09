@@ -8,17 +8,22 @@
     <title>Project 1</title>
     <link rel="stylesheet" href="CSS/styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+    <script defer src="JS/sprite.js"></script>
     <script defer src="JS/controls.js"></script>
     <script defer src="JS/main.js"></script>
 </head>
 <body>
-    <h1>Project 1</h1>
-    <p>Help Rick and morty get out of ___ and back home!!</p>
+    <h1>Adventures of a Purple div!</h1>
+    <p>Welcome!! this is a game all about avoiding those pesky obstacles, they're always trying to kill you!!
+        Thank You For Playing!!
+    </p>
     <div class="container">
         <div id="play-area">
         <div id="groundlevel"></div>
         <div class="game-elements" id="Character">Character</div>
-        <!-- <div class="game-elements" id="Platform"></div> -->
+        <div class="platforms" id="p1"></div>
+        <div class="platforms" id="p2"></div>
+        <div class="platforms" id="p3"></div>
         <div class="game-elements" id="Obstacle"></div> 
         <div class="game-elements" id="Endgame"></div>
     </div>
@@ -26,6 +31,7 @@
         <div class="buttons" id="left">LEFT(Left ArrowKey)</div>
         <div class="buttons" id="Up"> JUMP(Up ArrowKey)</div>
         <div class="buttons" id="right">RIGHT(Right-ArrowKey)</div>
+        <div class="buttons" id="down">DOWN(Down-ArrowKey)</div>
     </div>
     
 </div>

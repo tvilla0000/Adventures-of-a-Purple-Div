@@ -7,8 +7,6 @@
 
 /*----- app's state (variables) -----*/
 
-let reset = document.getElementById('Resetgame');
-
 let border = document.getElementById('play-area');
 
 
@@ -46,10 +44,10 @@ function youLose(){
         clearInterval(right);
         clearInterval(left);
         alert("You died:( Try again!");
+        
         resetGame();
-
-        // alert("You Died, Try again!");          
-    }
+        
+        }
     })
 };
     
@@ -57,15 +55,11 @@ youLose();
 
 function resetGame() {
     location.reload();
+    
 }
 
-function setBoundaries() {
-    setInterval(function() {
-        if (char.getBoundingClientRect().left){
-            
-        }
-    })
-}
+
+
 
 
 

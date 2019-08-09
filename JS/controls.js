@@ -42,7 +42,7 @@ let container = document.getElementById('play-area');
 
 let noTouch = document.getElementById('Obstacle');
 
-let platform = document.getElementById('Platform');
+let platform = document.getElementById('p1');
 
 let endGame = document.getElementById('Endgame');
 
@@ -75,26 +75,20 @@ function onKeyDown() {
         e.preventDefault();
         if (e.keyCode === KEY_LEFT) {
             keyState[0] = true;
-            // setTimeout(function() {
-            //     document.getElementById('Character').style.left = x*15 + 'px';
-            //     x--; 
-            // })
+            
         charLeft();
         
         }
         if (e.keyCode === KEY_RIGHT) {
             keyState[1] = true;
-            // setTimeout(function() {
-            //     document.getElementById('Character').style.left = x*15 + 'px';
-            //     x++;
-             // });
+            
 
             charRight();
             
         }
         if (e.keyCode === KEY_UP) {
             keyState[2] = true; 
-            // jump = setInterval(charJump, 250);
+            
             charJump();
             
         }
@@ -127,13 +121,13 @@ function onKeyDown() {
         if (e.keyCode === KEY_UP) {
             keyState[2] = false;
             pullCharDown();
-
-            // stopFall();
+            
+            
             
         }
         if (e.keyCode === KEY_DOWN) {
             keyState[3] = false;
-            
+            stopFall(); 
         }
         console.log(keyState);
     };
@@ -143,7 +137,8 @@ onKeyUp();
 
 function charJump() {
     jump = setInterval(function() {
-        char.style.bottom = y+160+'px'; y++;
+        y = 100;
+        char.style.bottom = y+200+'px'; y++;
         
     })
 };
@@ -155,13 +150,14 @@ function charJump() {
 function pullCharDown() {
     clearInterval(jump);
 fall = setInterval(function() {
-        char.style.bottom = y+160+'px'; y--;
+    char.style.bottom = y+200+'px'; y--;
     })
 }
 
 function charLeft() {
     left = setInterval(function() {
-        char.style.left = x+5+'px';
+        
+        char.style.left = x+25+'px';
         x--;})
 };
 
@@ -171,7 +167,7 @@ function stopCharLeft() {
 
 function charRight() {
     right = setInterval(function() {
-        document.getElementById('Character').style.left = x+5+'px';
+        document.getElementById('Character').style.left = x+25+'px';
         x++;})
     };
 
@@ -182,7 +178,7 @@ function stopCharRight() {
 
 function stopFall() {
     
-    fall = setInterval(function() {
+    setInterval(function() {
         if ( char.getBoundingClientRect().bottom === ground.getBoundingClientRect().top) {
             clearInterval(fall);
             // clearInterval(fall);
@@ -190,4 +186,15 @@ function stopFall() {
     })
     
 };
+
 stopFall();
+
+function landPlat() {
+    setInterval(function() {
+        if ( char.getBoundingClientRect().bottom === platform.getBoundingClientRect().top ) {
+            clearInterval(fall);
+        }
+        
+    });
+}
+landPlat();
