@@ -82,6 +82,8 @@ body {
     left: 250px;
     bottom: 45px;
     z-index: 0;
+    height: 40px;
+    width: 25px;
     
 }
 
@@ -91,6 +93,7 @@ body {
     height: 45px;
     width: 100%;
     bottom: 0;
+    border: 2px solid gray;
     
 }
 

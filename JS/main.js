@@ -7,11 +7,9 @@
 
 /*----- app's state (variables) -----*/
 
-const rect = char.getBoundingClientRect();
+let reset = document.getElementById('Resetgame');
 
-const rect2 = endGame.getBoundingClientRect();
-
-
+let border = document.getElementById('play-area');
 
 
 
@@ -32,7 +30,8 @@ function winningLogic() {
     setInterval(function() {
     if (char.getBoundingClientRect().right === endGame.getBoundingClientRect().left && 
     char.getBoundingClientRect().bottom === endGame.getBoundingClientRect().bottom || char.getBoundingClientRect().left === endGame.getBoundingClientRect().right && char.getBoundingClientRect().bottom === endGame.getBoundingClientRect().bottom) {
-        alert('Congrats');
+        alert('Congratulations!! you have escaped!!!');
+        resetGame();
         }
     })
 };
@@ -43,11 +42,30 @@ function winningLogic() {
 function youLose(){
     setInterval(function() {
     if (char.getBoundingClientRect().right === noTouch.getBoundingClientRect().left && char.getBoundingClientRect().bottom === noTouch.getBoundingClientRect().bottom ||
-    char.getBoundingClientRect().left === noTouch.getBoundingClientRect().right && char.getBoundingClientRect().bottom === noTouch.getBoundingClientRect().bottom){
-        alert("You Died, Try again!");
+    char.getBoundingClientRect().left === noTouch.getBoundingClientRect().right && char.getBoundingClientRect().bottom === noTouch.getBoundingClientRect().bottom ){
+        clearInterval(right);
+        clearInterval(left);
+        alert("You died:( Try again!");
+        resetGame();
+
+        // alert("You Died, Try again!");          
     }
     })
 };
     
 youLose();
+
+function resetGame() {
+    location.reload();
+}
+
+function setBoundaries() {
+    setInterval(function() {
+        if (char.getBoundingClientRect().left){
+            
+        }
+    })
+}
+
+
 

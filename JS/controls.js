@@ -12,9 +12,7 @@ let keyState = [false, false, false, false];
 
 let x = 1;
 
-let y = 2
-
-yOriginal = 0;
+let y = 1;
 
 // let y;
 
@@ -47,6 +45,9 @@ let noTouch = document.getElementById('Obstacle');
 let platform = document.getElementById('Platform');
 
 let endGame = document.getElementById('Endgame');
+
+let ground = document.getElementById('groundlevel');
+
 
 
 
@@ -87,17 +88,20 @@ function onKeyDown() {
             //     document.getElementById('Character').style.left = x*15 + 'px';
             //     x++;
              // });
+
             charRight();
+            
         }
         if (e.keyCode === KEY_UP) {
             keyState[2] = true; 
             // jump = setInterval(charJump, 250);
             charJump();
+            
         }
         
         if (e.keyCode === KEY_DOWN) {
             keyState[3] = true;
-            
+            pullCharDown();
         }
         console.log(keyState);
         
@@ -111,19 +115,25 @@ function onKeyDown() {
         if (e.keyCode === KEY_LEFT) {
             keyState[0] = false;
             stopCharLeft();
+        
+            
             
         }
         if (e.keyCode === KEY_RIGHT) {
             keyState[1] = false;
             stopCharRight();
+            
         }
         if (e.keyCode === KEY_UP) {
             keyState[2] = false;
             pullCharDown();
+
+            // stopFall();
             
         }
         if (e.keyCode === KEY_DOWN) {
             keyState[3] = false;
+            
         }
         console.log(keyState);
     };
@@ -132,7 +142,7 @@ function onKeyDown() {
 onKeyUp();
 
 function charJump() {
-    setTimeout(function() {
+    jump = setInterval(function() {
         char.style.bottom = y+160+'px'; y++;
         
     })
@@ -143,7 +153,8 @@ function charJump() {
 //     }
 
 function pullCharDown() {
-    setInterval(function() {
+    clearInterval(jump);
+fall = setInterval(function() {
         char.style.bottom = y+160+'px'; y--;
     })
 }
@@ -169,3 +180,14 @@ function stopCharRight() {
 }
 
 
+function stopFall() {
+    
+    fall = setInterval(function() {
+        if ( char.getBoundingClientRect().bottom === ground.getBoundingClientRect().top) {
+            clearInterval(fall);
+            // clearInterval(fall);
+        }
+    })
+    
+};
+stopFall();
