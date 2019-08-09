@@ -15,5 +15,8 @@ My Game is a 2d platform game that requires you to jump over obstacles and to re
 # Technologies
 In this project I implemented HTML, CSS, and Javacsript!
 
+# Stretch Goals
+Originally I intended to animate the divs to make them appear as "moving", and I want to implement a better collision system than the one I have now
+
 # Let's play!!
 [We can launch here to play](https://tvilla0000.github.io/Adventures-of-a-Purple-Div/)
